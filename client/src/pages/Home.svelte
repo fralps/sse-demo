@@ -1,9 +1,7 @@
 <script lang="ts">
   import { _ } from '@translations/i18n';
-  import { LocaleSwitcher } from '@components';
 </script>
 
-<div class="text-center">
-  <h1 class="text-center">{$_('home')}</h1>
-  <LocaleSwitcher />
+<div class="text-center p-18">
+  <h1 class="text-center">SSE demo for notifications</h1>
 </div>
