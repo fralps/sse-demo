@@ -1,11 +1,7 @@
-import type { HttpContext } from '@adonisjs/core/http'
+import transmit from '@adonisjs/transmit/services/main'
 
 export default class WebhooksController {
-  public async store({ request, response }: HttpContext) {
-    const { event, data } = request.all();
-
-    console.log(event, data);
-
-    response.status(200).send('Webhook received');
+  public async store(): Promise<void> {
+    transmit.broadcast('notification', { message: 'Nouvelle notification' })
   }
 }
