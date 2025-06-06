@@ -16,9 +16,12 @@ const HealthChecksController = () => import('#controllers/health_checks_controll
 // Lazy loading controllers
 const SessionsController = () => import('#controllers/api/v1/users/sessions_controller')
 const RegistrationsController = () => import('#controllers/api/v1/users/registrations_controller')
+const WebhooksController = () => import('#controllers/api/v1/webhooks_controller')
 
 router
   .group(() => {
+    router.post('webhooks', [WebhooksController, 'store'])
+
     // Users
     router
       .group(() => {
