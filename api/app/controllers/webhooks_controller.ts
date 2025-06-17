@@ -9,6 +9,6 @@ export default class WebhooksController {
 
     const newNotification = await Notification.create({ text })
 
-    transmit.broadcast('notification', newNotification)
+    transmit.broadcast('notification', newNotification.toJSON())
   }
 }
