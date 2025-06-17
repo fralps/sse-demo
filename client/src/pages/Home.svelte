@@ -28,7 +28,7 @@
     await fetchNotifications();
   });
 
-  const fetchNotifications = async () => {
+  const fetchNotifications = async (): Promise<void> => {
     await fetch('http://localhost:3333/notifications', {
       method: 'GET',
       headers: {
@@ -46,7 +46,7 @@
       });
   };
 
-  onDestroy(() => {
+  onDestroy((): void => {
     subscription.delete();
   });
 </script>
