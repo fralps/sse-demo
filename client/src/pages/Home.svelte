@@ -10,7 +10,7 @@
   }
 
   let subscription: any;
-  let notifications: Notification[] = [];
+  let notifications: Notification[] = $state([]);
 
   const transmit = new Transmit({
     baseUrl: 'http://localhost:3333',
